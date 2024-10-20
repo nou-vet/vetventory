@@ -10,9 +10,7 @@ defmodule HelloEcto.Application do
     children = [
       HelloEcto.Repo,
       {DNSCluster, query: Application.get_env(:hello_ecto, :dns_cluster_query) || :ignore},
-      {Phoenix.PubSub, name: HelloEcto.PubSub},
-      # Start the Finch HTTP client for sending emails
-      {Finch, name: HelloEcto.Finch}
+      {Phoenix.PubSub, name: HelloEcto.PubSub}
       # Start a worker by calling: HelloEcto.Worker.start_link(arg)
       # {HelloEcto.Worker, arg}
     ]
